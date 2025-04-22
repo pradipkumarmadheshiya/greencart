@@ -28,10 +28,9 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden sm:flex items-center gap-8">
-            <NavLink className="border rounded-2xl px-2.5 py-0.5 text-[12px] text-gray-500" to="/seller">Seller Dashboard</NavLink>
-            <NavLink className={({isActive})=>isActive ? "text-primary" :""} to="/">Home</NavLink>
-            <NavLink className={({isActive})=>isActive ? "text-primary" :""} to="/products">All Product</NavLink>
-            {/* <NavLink className={({isActive})=>isActive ? "text-primary" :""} to="/contact">Contact</NavLink> */}
+            <NavLink className="border rounded-2xl px-2.5 py-0.5 text-[12px] text-gray-500 hover:bg-gray-100" to="/seller">Seller Dashboard</NavLink>
+            <NavLink className={({isActive})=>`${isActive ? "text-primary" : ""} hover:text-primary`} to="/">Home</NavLink>
+            <NavLink className={({isActive})=>`${isActive ? "text-primary" : ""} hover:text-primary`} to="/products">All Product</NavLink>
 
             <div className="hidden lg:flex items-center text-sm gap-2 border border-gray-300 px-3 rounded-full">
                 <input onChange={(e)=>setSearchQuery(e.target.value.trim())} className="py-1.5 w-35 bg-transparent outline-none placeholder-gray-500" type="text" placeholder="Search products" />
