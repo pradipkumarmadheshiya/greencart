@@ -14,7 +14,7 @@ export const AppContextProvider=({children})=>{
     const [isSeller, setIsSeller]=useState(false)
     const [showUserLogin, setShowUserLogin]=useState(false)
     const [products, setProducts]=useState([])
-    const [cartItems, setCartItems]=useState({})
+    const [cartItems, setCartItems]=useState(JSON.parse(localStorage.getItem("localStCartItems")) || {})
     const [searchQuery, setSearchQuery]=useState({})
     
     // Fetch Products
@@ -37,6 +37,7 @@ export const AppContextProvider=({children})=>{
         }
 
         setCartItems(cartData)
+        localStorage.setItem("localStCartItems", JSON.stringify(cartData))
         toast.success("Added to Cart")
     }
 
